@@ -1,0 +1,46 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Contacts
+{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='homepage.css')}}">
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;color: maroon;">Ashesi University College</h1>
+
+<div class="ashesi" style="text-align: center">
+<h1 style="text-align: center;background-color: lightblue;">Contact Us</h1>
+		<p style="background-color:maroon;color: white ">Student Center
+			<br>1 University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana
+			 <br>Phone: +233.302.610.330   OR   +233­ ‌302 974 980 
+			 <br>Email: studentcenter@ashesi.edu.gh
+			 <br>
+			----------------------------------------------------------------------
+			<br>
+			Akornor
+			<br>1 University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana
+			 <br>Phone: +233.015.523.421   OR   +233­ ‌201 005 780
+			 <br>Email: akornor@ashesi.edu.gh
+			 <br>
+			----------------------------------------------------------------------
+			<br>
+			Hakuna Matata
+			<br>1 University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana
+			 <br>Phone: +233.085.050.485   OR   +233­ ‌020 008 900
+			 <br>Email: hakunamatata@ashesi.edu.gh
+			 <br>
+			 ----------------------------------------------------------------------
+			 <br>
+			 BigBen
+			<br>1 University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana
+			 <br>Phone: +233.256.188.521   OR   +233­ ‌012 042 503
+			 <br>Email: bigben@ashesi.edu.gh
+			 <br>
+			
+		</p>
+</div>
+
+{% endblock %}

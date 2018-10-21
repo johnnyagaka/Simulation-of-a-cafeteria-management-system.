@@ -1,0 +1,234 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='dashboard.css')}}">
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Ashesi University College Cafeteria</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="{{ url_for('place_order') }}">Place Order</a></li>
+            <li><a href="#">User Profile</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="http://192.168.20.21/mpconsole/">Meal Plan Balance <span class="sr-only">(current)</span></a></li>
+            <li><a href="http://192.168.20.21/mpconsole/transaction">Transaction History</a></li>
+            <li><a href="#">Rate Us</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">BigBen Cafeteria</a></li>
+            <li><a href="">Hakuna Matata</a></li>
+            <li><a href="">Akorno</a></li>
+            <li><a href="">Student Center</a></li>
+            <li><a href="">Coming Soon</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Coffee Shop</a></li>
+            <li><a href="">Pizza Hut</a></li>
+            <li><a href="">Popcorn Hut</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Welcome, {{ name }}</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              
+              <h4>BigBen</h4>
+              <span class="text-muted">Cafeteria</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Akorno</h4>
+              <span class="text-muted">Cafeteria</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Hakuna Matata</h4>
+              <span class="text-muted">Eatery</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Student Center</h4>
+              <span class="text-muted">Eatery</span>
+            </div>
+          </div>
+
+          <h2 class="sub-header">Open Daily 8.00 a.m-12.00 a.m</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Order Code</th>
+                  <th>Food</th>
+                  <th>Price</th>
+                  <th>Order Code</th>
+                  <th>Food</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>001</td>
+                  <td>Cheese Burger</td>
+                  <td>Gh₵ 15</td>
+                  <td>017</td>
+                  <td>Veg Burger</td>
+                  <td>Gh₵ 11</td>
+                </tr>
+                <tr>
+                  <td>002</td>
+                  <td>French Fries</td>
+                  <td>Gh₵ 10</td>
+                  <td>018</td>
+                  <td>Hot Dog</td>
+                  <td>Gh₵ 8</td>
+                </tr>
+                <tr>
+                  <td>003</td>
+                  <td>Banku/Chicken/Fish/Shito</td>
+                  <td>Gh₵ 8.5/Gh₵ 7.5</td>
+                  <td>019</td>
+                  <td>Fufu/Light Soup</td>
+                  <td>Gh₵ 8.5 </td>
+                </tr>
+                <tr>
+                  <td>004</td>
+                  <td>Kenkey/Chicken/Fish/Shito</td>
+                  <td>Gh₵ 9</td>
+                  <td>020</td>
+                  <td>Eba/Okro Soup</td>
+                  <td>Gh₵ 8.5/Gh₵ 7.5</td>
+                </tr>
+                <tr>
+                  <td>005</td>
+                  <td>Rice Balls/Light Soup</td>
+                  <td>Gh₵ 8.5/Gh₵ 7.5</td>
+                  <td>021</td>
+                  <td>Dessert</td>
+                  <td>Gh₵ 8</td>
+                </tr>
+                <tr>
+                  <td>006</td>
+                  <td>Veg Salad</td>
+                  <td>Gh₵ 9</td>
+                  <td>022</td>
+                  <td>Fruit Salad</td>
+                  <td>Gh₵ 10</td>
+                </tr>
+                <tr>
+                  <td>007</td>
+                  <td>Grilled Chicken</td>
+                  <td>Gh₵ 3.5</td>
+                  <td>023</td>
+                  <td>Fish fillet</td>
+                  <td>Gh₵ 5</td>
+                </tr>
+                <tr>
+                  <td>008</td>
+                  <td>Tilapia</td>
+                  <td>Gh₵ 6</td>
+                  <td>024</td>
+                  <td>Fried Rice/Chicken/Stew</td>
+                  <td>Gh₵ 8.5/Gh₵ 7.5</td>
+                </tr>
+                <tr>
+                  <td>009</td>
+                  <td>Jollof Rice/Chicken/Stew</td>
+                  <td>Gh₵ 8.5/Gh₵ 7.5</td>
+                  <td>025</td>
+                  <td>Saffron Rice/Chicken/Stew</td>
+                  <td>Gh₵ 8.5/Gh₵ 7.5</td>
+                </tr>
+                <tr>
+                  <td>010</td>
+                  <td>Vermicilli Rice/Chicken/Stew</td>
+                  <td>Gh₵ 8.5/Gh₵ 7.5</td>
+                  <td>026</td>
+                  <td>Boiled Plantain/Bean stew</td>
+                  <td>Gh₵ 8.5</td>
+                </tr>
+                <tr>
+                  <td>011</td>
+                  <td>Banku/Chicken/Groudnut Soup</td>
+                  <td>Gh₵ 9</td>
+                  <td>027</td>
+                  <td>Red Red</td>
+                  <td>Gh₵ 8</td>
+                </tr>
+                <tr>
+                  <td>012</td>
+                  <td>Fufu/Chicken/Groudnut Soup</td>
+                  <td>Gh₵ 8.5/Gh₵ 7.5</td>
+                  <td>028</td>
+                  <td>Fried Plantain</td>
+                  <td>Gh₵ 3</td>
+                </tr>
+                <tr>
+                  <td>013</td>
+                  <td>Soda</td>
+                  <td>Gh₵ 3</td>
+                  <td>029</td>
+                  <td>Mirinda/Pepsi</td>
+                  <td>Gh₵ 2</td>
+                </tr>
+                <tr>
+                  <td>014</td>
+                  <td>Don Simon(1 ltr)</td>
+                  <td>Gh₵ 9.5</td>
+                  <td>030</td>
+                  <td>Fruit Telli(1 ltr)</td>
+                  <td>Gh₵ 9.5</td>
+                </tr>
+                <tr>
+                  <td>015</td>
+                  <td>Don Simon(1/4 ltr)</td>
+                  <td>Gh₵ 4.5</td>
+                  <td>031</td>
+                  <td>Water (1 ltr)</td>
+                  <td>Gh₵ 2.5</td>
+                </tr>
+                <tr>
+                  <td>016</td>
+                  <td>Water (1/2 ltr)</td>
+                  <td>Gh₵ 1.2</td>
+                  <td>032</td>
+                  <td>Red Bull</td>
+                  <td>Gh₵ 4.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
