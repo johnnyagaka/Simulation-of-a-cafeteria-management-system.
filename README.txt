@@ -1,5 +1,5 @@
 #This provides information on how to go about running the code provided herein
-The development of this web application used flask web development frawork to achieve the result.
+The development of this web application used flask web development framework to achieve the result.
 There is a requirement for the user to install the flask module in the same folder where the python is saved in their pc( using -m pip install flask) on the command line
 For the sake of information management, the developer made use of sqlAlchemy as a python toolkit and object relational Mapper together with sqlite, which are inbuilt within flask to enable database management for its flexibility like SQL
 # sqlAlchemy is installed on the commandline too
